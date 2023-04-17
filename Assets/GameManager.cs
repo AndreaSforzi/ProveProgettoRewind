@@ -29,13 +29,20 @@ public class GameManager : MonoBehaviour
         if (Input.GetAxis("Mouse ScrollWheel") < 0 )
             speedReproduction -= 0.2;
 
-        if (Input.GetKeyDown(KeyCode.X))
+        if (Input.GetMouseButton(1))
+            speedReproduction = 2;
+        else if (Input.GetMouseButton(0))
+            speedReproduction = -1;
+        else
             speedReproduction = 1;
-        if (Input.GetKeyDown(KeyCode.Z))
-            speedReproduction = 0;
 
-        if (Input.GetKeyDown(KeyCode.I))
-            menu.Open();
+        if (Input.GetKeyDown(KeyCode.Q))
+        {
+            if (!menu.opened)
+                menu.Open();
+            else
+                menu.Close();
+        }
 
 
 

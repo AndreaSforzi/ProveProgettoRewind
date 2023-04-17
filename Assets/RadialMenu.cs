@@ -5,6 +5,9 @@ using UnityEngine.UI;
 
 public class RadialMenu : MonoBehaviour
 {
+    public static RadialMenu Instance;
+    [HideInInspector]public bool opened = false;
+
     [SerializeField] GameObject entryPrefab;
 
     [SerializeField] float radius = 300f;
@@ -13,8 +16,14 @@ public class RadialMenu : MonoBehaviour
 
     List<RadialMenuEntry> entries;
 
+    RadialMenuEntry selectedEntry;
+
     private void Start()
     {
+        if (Instance == null)
+            Instance = this;
+        else
+            Destroy(gameObject);
         entries = new List<RadialMenuEntry>();
     }
 
@@ -27,6 +36,8 @@ public class RadialMenu : MonoBehaviour
         rme.SetIcon(pIcon);
 
         entries.Add(rme);
+        
+        
     }
 
     public void Open()
@@ -36,6 +47,16 @@ public class RadialMenu : MonoBehaviour
             AddEntry("Button" + i.ToString(), icons[i]);
         }
         Rearrange();
+        opened = true;
+    }
+
+    public void Close()
+    {
+        for (int i = 0; i < icons.Count; i++)
+        {
+            Destroy(entries[i].gameObject);
+        }
+        opened = false;
     }
 
     void Rearrange()
@@ -50,4 +71,8 @@ public class RadialMenu : MonoBehaviour
             entries[i].GetComponent<RectTransform>().anchoredPosition = new Vector3(x, y, 0);
         }
     }
+
+    
+
+    
 }

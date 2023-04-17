@@ -581,10 +581,9 @@ RectTransform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 1699450657}
+  m_Children: []
   m_Father: {fileID: 672209137}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -778,7 +777,7 @@ Canvas:
   m_OverrideSorting: 0
   m_OverridePixelPerfect: 0
   m_SortingBucketNormalizedSize: 0
-  m_AdditionalShaderChannelsFlag: 0
+  m_AdditionalShaderChannelsFlag: 25
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_TargetDisplay: 0
@@ -794,6 +793,7 @@ RectTransform:
   m_LocalScale: {x: 0, y: 0, z: 0}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 1699450657}
   - {fileID: 574328040}
   m_Father: {fileID: 0}
   m_RootOrder: 7
@@ -1032,7 +1032,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 574328040}
+  m_Father: {fileID: 672209137}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
@@ -1052,13 +1052,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 16b5f5ba94d28bc4e87a4ae381b3b0f3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  opened: 0
   entryPrefab: {fileID: 503167985393927881, guid: a4650a49c105d9449a334f9bb74b3fc5, type: 3}
-  radius: 200
+  radius: 150
   icons:
   - {fileID: -2053461982, guid: 71ad172f81917dc4c88b385499ba85c4, type: 3}
   - {fileID: -1260174942, guid: 71ad172f81917dc4c88b385499ba85c4, type: 3}
   - {fileID: 285830086, guid: 71ad172f81917dc4c88b385499ba85c4, type: 3}
-  - {fileID: 2106880055, guid: 71ad172f81917dc4c88b385499ba85c4, type: 3}
   - {fileID: 2106880055, guid: 71ad172f81917dc4c88b385499ba85c4, type: 3}
   - {fileID: 2106880055, guid: 71ad172f81917dc4c88b385499ba85c4, type: 3}
   - {fileID: 2106880055, guid: 71ad172f81917dc4c88b385499ba85c4, type: 3}

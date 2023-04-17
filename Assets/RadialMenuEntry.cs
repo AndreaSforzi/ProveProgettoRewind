@@ -11,7 +11,9 @@ public class RadialMenuEntry : MonoBehaviour , IPointerClickHandler,IPointerEnte
     [SerializeField] TextMeshProUGUI _label;
     [SerializeField] Image icon;
 
-    RectTransform rect;
+    
+
+    public RectTransform rect;
 
     private void Start()
     {
@@ -34,15 +36,27 @@ public class RadialMenuEntry : MonoBehaviour , IPointerClickHandler,IPointerEnte
 
     public void OnPointerClick(PointerEventData eventData)
     {
-        throw new System.NotImplementedException();
+        Debug.Log("Selected");
+        RadialMenu.Instance.Close();
     }
 
     public void OnPointerEnter(PointerEventData eventData)
     {
-        rect.localScale= new Vector3(transform.localScale.x * 1.1f, transform.localScale.y * 1.1f);
+        SelectIcon();
     }
 
     public void OnPointerExit(PointerEventData eventData)
+    {
+        DeselectIcon();
+    }
+
+    public void SelectIcon()
+    {
+        rect.localScale = new Vector3(transform.localScale.x * 1.1f, transform.localScale.y * 1.1f);
+        
+    }
+
+    public void DeselectIcon()
     {
         rect.localScale = new Vector3(transform.localScale.x * 0.9f, transform.localScale.y * 0.9f);
     }
