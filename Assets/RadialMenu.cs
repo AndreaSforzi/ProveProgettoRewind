@@ -56,6 +56,7 @@ public class RadialMenu : MonoBehaviour
         {
             Destroy(entries[i].gameObject);
         }
+        entries.Clear();
         opened = false;
     }
 
